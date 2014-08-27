@@ -1,0 +1,54 @@
+decompr 1.1
+=======================
+
+* update references
+
+* include more descriptive description
+
+
+decompr 1.0.2
+=======================
+
+* update example data to regional tables for faster computations
+
+* put back examples for non-decomp functions
+
+
+decompr 1.0.1
+=======================
+
+* remove examples other than for **decomp** function, to pass CRAN test in time
+
+* add cran-comments.md
+
+
+decompr 1.0
+=======================
+
+* functions names use underscores in stead of periods
+
+* method names use underscores in stead of periods
+
+* examples reflect the above changes
+
+* WIOD data set is now compressed using bzip2
+
+* included this news file
+
+
+decompr 0.7
+=======================
+
+* citation information is included
+
+
+decompr 0.6
+=======================
+
+* example data set in included
+
+
+decompr 0.5
+=======================
+
+* examples are included
