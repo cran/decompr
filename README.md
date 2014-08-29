@@ -1,4 +1,4 @@
-[![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.11431.png)](http://dx.doi.org/10.5281/zenodo.11431)
+[![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.11510.png)](http://dx.doi.org/10.5281/zenodo.11510)
 
 decompr
 =======
@@ -6,7 +6,9 @@ decompr
 Bastiaan Quast, <bquast@gmail.com>
 ----------------------------------
 
-An R package that implements Export Decomposition using the Wang-Wei-Zhu (Wang, Wei, and Zhu 2013) and Kung-Fu (Mehrotra, Kung, and Grosky 1990) algorithms.
+The R package 'decompr' implements two export decomposition algorithms.
+Firstly, the Wang-Wei-Zhu (Wang, Wei, and Zhu 2013) algorithm splits bilateral gross exports into 16 value added components.
+Secondly, the Source decomposition algorithm derives the value added origin of exports by country and industry, which is also based on Wang, Wei, and Zhu (2013).
 
 
 Inputs
@@ -27,11 +29,17 @@ The output when using the WWZ algorithm is a matrix with dimensions **GNGx19**. 
 
 Installation
 ------------
-You can install the latest development version from GitHub using the `devtools` package.
+You can install the latest **stable** version from CRAN.
 
 ```r
-# install.packages("devtools")
-devtools::install_github("bquast/decompr")
+install.packages("decompr")
+```
+
+You can install the latest **development** version from GitHub using the `devtools` package.
+
+```r
+library(devtools)
+install_github("decompr", "bquast")
 ```
 
 
@@ -53,8 +61,6 @@ This package is based on R code written by Fei Wang (not to be confused with the
 
 References
 ----------
-
-Mehrotra, Rajiv, Fu K. Kung, and William I. Grosky. 1990. “Industrial Part Recognition Using a Component-Index.” *Image and Vision Computing* 8 (3): 225–232.
 
 Timmer, Marcel, A. A. Erumban, R. Gouma, B. Los, U. Temurshoev, G. J. de Vries, and I. Arto. 2012. “The World Input-Output Database (WIOD): Contents, Sources and Methods.” *WIOD Background Document Available at Www. Wiod. Org*.
 
