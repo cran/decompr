@@ -44,8 +44,36 @@ NULL
 #' @references {Timmer, Marcel P. (ed) (2012), "The World Input-Output Database (WIOD): Contents Sources and Methods",
 #' WIOD Working Paper Number 10, downloadable at http://www.wiod.org/publications/papers/wiod10.pdf }
 NULL
+#' @name final
+#' @docType data
+#' @title Leather Example
+#' @description the final demand data
+NULL
+#' @name inter
+#' @docType data
+#' @title Leather Example
+#' @description the intermediate demand data
+NULL
+#' @name countries
+#' @docType data
+#' @title Leather Example
+#' @description the names of the countries data
+NULL
+#' @name industries
+#' @docType data
+#' @title Leather Example
+#' @description the names of the industries data
+NULL
+#' @name out
+#' @docType data
+#' @title Leather Example
+#' @description final output
+NULL
 .onAttach <- function(...) {
-  packageStartupMessage('NOTICE: the API for decomp and load_tables is changing, to that of load_table_vectors in the upcoming version 2, please see http://qua.st/decompr/decompr-v2/ for more info.
+  packageStartupMessage('If you use decompr for data analysis,
+please cite both R and decompr,
+using citation() and citation("decompr") respectively.
                         
-                        If you use decompr for data analysis, please cite R as well as decompr, using citation() and citation("decompr") respectively.')
-}
+IMPORTANT changes to the decomp function defaults,
+see help("decomp") and http://qua.st/decompr/decompr-v2/
+')}

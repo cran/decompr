@@ -15,17 +15,10 @@
 #' @author Bastiaan Quast
 #' @details Adapted from code by Fei Wang.
 #' @export
-#' @examples
-#' # load World Input-Output Database for 2011
-#' data(wiod)
-#' 
-#' # create intermediate object (class decompr)
-#' decompr_object <- load_tables(intermediate_demand, final_demand)
-#' str(decompr_object)
 
 
 load_tables <- function(x, y) {
-
+  
   # Part 1: getting the rownames etc.
   secreg <- as.character(x[2,-c(1,2)])
   GN     <- length(secreg)
@@ -41,6 +34,10 @@ load_tables <- function(x, y) {
   x <- x[ 1:GN, ]
   
   y <- data.matrix( y[3:(GN+2),3:((5*G)+2)] )
+  
+  warning("The API for the decomp function has changed,
+  it now uses load_tables_vectors instead of load_tables,
+  for more info see http://qua.st/decompr/decompr-v2/.")
   
   load_tables_vectors(x,
                       y,
