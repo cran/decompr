@@ -1,10 +1,10 @@
-#' Leontief Decomposition
+#' Leontief Output Decomposition
 #' 
-#' This function runs the Leontief decomposition.
+#' This function runs the Leontief decomposition on output
 #' 
 #' @param x ane object of class decompr
-#' @param long transform the output data into a long (tidy) data set or not, default it TRUE.
 #' @return a data frame containing the square matrix and labelled column and rows
+#' @param long transform the output data into a long (tidy) data set or not, default it TRUE.
 #' @author Bastiaan Quast
 #' @references Wang, Zhi, Shang-Jin Wei, and Kunfu Zhu.
 #' Quantifying international production sharing at the bilateral and sector levels. 
@@ -22,16 +22,15 @@
 #'                                       out        )
 #' 
 #' # run the Leontief decomposition on the decompr object
-#' leontief(decompr_object, long=FALSE )
+#' leontief_output(decompr_object)
 
 
-leontief <- function( x, long=TRUE ) {
+leontief_output <- function( x, long=TRUE ) {
   
   # Part 1 == loading data A,L,Vc, X, Y, E,ESR, etc.
   
   # decompose
-  out <- x$Vhat %*% x$B %*% x$Exp
-  
+  out <- x$Vhat %*% x$B %*% diag(x$X)
   
   if (long == TRUE) {
     
@@ -63,7 +62,6 @@ leontief <- function( x, long=TRUE ) {
   # create attributes
   attr(out, "k")      <- x$k
   attr(out, "i")      <- x$i
-  attr(out, "decomposition") <- "leontief"
   # attr(out, "rownam") <- x$rownam
   
   # return result

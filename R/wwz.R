@@ -22,8 +22,7 @@
 #'                                       out        )
 #' 
 #' # run the WWZ decomposition on the decompr object
-#' w  <- wwz(decompr_object)
-#' w[1:5,1:5]
+#' wwz(decompr_object)
 
 
 wwz <- function( x ) {
@@ -279,7 +278,13 @@ wwz <- function( x ) {
   }
   # rm( EEr, z, VrBrs )
   
-
+  
+  ###### try to calculate DViX_Fsr
+  DViX_Fsr <- VsLss %*% x$ESR
+  DViX_Fsr <- t(DViX_Fsr)
+  dim(DViX_Fsr) <- c(x$GN*x$G, 1)
+  
+  
   dimnames( ALL )  <-  list( x$rownam, x$k, decomp19)  
   
   
@@ -287,14 +292,16 @@ wwz <- function( x ) {
   
   for ( u in 1:x$GN ){
     if ( u==1 ){
-      ALLandTotal <- rbind( ALL[ u,, ], colSums( ALL[ u,, ] ))
+      #ALLandTotal <- rbind( ALL[ u,, ], colSums( ALL[ u,, ] ))
+      ALLandTotal <- rbind( ALL[ u,, ])
     }
     else {
-      ALLandTotal <- rbind( ALLandTotal, ALL[ u,, ], colSums( ALL[ u,, ] ))
+      #ALLandTotal <- rbind( ALLandTotal, ALL[ u,, ], colSums( ALL[ u,, ] ))
+      ALLandTotal <- rbind( ALLandTotal, ALL[ u,, ])
     }
   }
   # rm(ALL)
-  rownames( ALLandTotal ) <- x$bigrownam
+  rownames( ALLandTotal ) <- NULL #x$bigrownam
   
   
   
@@ -319,9 +326,23 @@ wwz <- function( x ) {
   texpfddiffpercent <- round( texpfddiffpercent,4)
   texpintdiffpercent <-  round( texpintdiffpercent, 4)
   
-  ALLandTotal <-   cbind( ALLandTotal,texpdiff, texpfddiff, texpintdiff,
-                          texpdiffpercent,texpfddiffpercent,texpintdiffpercent )
+  ALLandTotal <-   data.frame( rep(x$k,                       each=length(x$k)*length(x$i) ),
+                               rep(x$i,  times = length(x$k), each=length(x$k) ),
+                               rep(x$k,  times = length(x$k)*length(x$i) ),
+                               ALLandTotal,
+                               texpdiff,
+                               texpfddiff,
+                               texpintdiff,
+                               texpdiffpercent,
+                               texpfddiffpercent,
+                               texpintdiffpercent,
+                               DViX_Fsr)
+  
+  names(ALLandTotal)[1:3] <- c("Exporting_Country", "Exporting_Industry", "Importing_Country")
+                          
   # dim( ALLandTotal )
+  
+  attr(ALLandTotal, "decomposition") <- "wwz"
   
   return(ALLandTotal)
   
