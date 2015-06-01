@@ -2,7 +2,8 @@
 #' 
 #' This function runs the Leontief decomposition.
 #' 
-#' @param x ane object of class decompr
+#' @param x an object of class decompr
+#' @param post post-multiply the Leontief inverse with something, the default is exports
 #' @param long transform the output data into a long (tidy) data set or not, default it TRUE.
 #' @return a data frame containing the square matrix and labelled column and rows
 #' @author Bastiaan Quast
@@ -22,17 +23,28 @@
 #'                                       out        )
 #' 
 #' # run the Leontief decomposition on the decompr object
-#' leontief(decompr_object, long=FALSE )
+#' leontief(decompr_object )
 
 
-leontief <- function( x, long=TRUE ) {
+leontief <- function( x, post = c("exports", "output", "final_demand", "none"), long=TRUE ) {
   
-  # Part 1 == loading data A,L,Vc, X, Y, E,ESR, etc.
+  post <- match.arg(post)
   
-  # decompose
-  out <- x$Vhat %*% x$B %*% x$Exp
+  # compute Leontief inverse
+  out <- x$Vhat %*% x$B
+  
+  # post multiply
+  if (post == "exports") {
+    out <- out %*% x$Exp
+  } else if (post == "output") {
+    out <- out %*% diag(x$X)
+  } else if (post == "final_demand") {
+    out <- out %*% x$Y
+  }
   
   
+  
+  # structure output format
   if (long == TRUE) {
     
     out <- as.vector(t(out))
@@ -50,7 +62,7 @@ leontief <- function( x, long=TRUE ) {
     
     # add row and column names
     out <- as.data.frame(out)
-    names(out) <- x$rownam
+    if (post != "final_demand") names(out) <- x$rownam
     row.names(out) <- x$rownam
     
     # set long attribute to FALSE
