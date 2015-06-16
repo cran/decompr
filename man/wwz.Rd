@@ -19,7 +19,7 @@ This function runs the Wang-Wei-Zhu decomposition.
 Adapted from code by Fei Wang.
 }
 \examples{
-# load leather example data
+# load example data
 data(leather)
 
 # create intermediate object (class decompr)

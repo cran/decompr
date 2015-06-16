@@ -1,3 +1,9 @@
+decompr 4.1.0
+=======================
+
+* fix post multiplication "final_demand" of leontief()
+
+
 decompr 4.0.0
 =======================
 

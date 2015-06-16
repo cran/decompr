@@ -11,7 +11,7 @@
 #' No. w19677. National Bureau of Economic Research, 2013.
 #' @export
 #' @examples
-#' # load leather example data
+#' # load example data
 #' data(leather)
 #' 
 #' # create intermediate object (class decompr)
