@@ -1,7 +1,9 @@
 decompr
 =======
-[![CRAN Version](http://www.r-pkg.org/badges/version/decompr)](http://cran.r-project.org/package=decompr)
-[![RStudio Cloud Downloads](http://cranlogs.r-pkg.org/badges/decompr?color=brightgreen)](http://cran.rstudio.com/web/packages/decompr/index.html)
+[![License](http://img.shields.io/badge/license-GPLv3-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-3.0.html)
+[![CRAN Version](http://www.r-pkg.org/badges/version/decompr)](https://cran.r-project.org/package=decompr)
+[![Total RStudio Cloud Downloads](http://cranlogs.r-pkg.org/badges/grand-total/decompr?color=brightgreen)](https://cran.r-project.org/package=decompr)
+[![Monthly RStudio Cloud Downloads](http://cranlogs.r-pkg.org/badges/decompr?color=brightgreen)](https://cran.r-project.org/package=decompr)
 [![Travis-CI Build Status](https://travis-ci.org/bquast/decompr.png?branch=master)](https://travis-ci.org/bquast/decompr)
 [![Coverage Status](https://coveralls.io/repos/bquast/decompr/badge.svg?branch=master)](https://coveralls.io/r/bquast/decompr?branch=master)
 
@@ -40,7 +42,7 @@ Following installation, the package can be loaded using:
 library(decompr)
 ```
 
-For general information on using the package, please refer to the help files    .
+For general information on using the package, please refer to the help files.
 
 ```r
 help("decompr")
