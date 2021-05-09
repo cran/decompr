@@ -3,15 +3,16 @@ context("leontief")
 
 # load test data
 data(leather)
+list2env(leather, environment())
 
 # leontief decomposition
 # n.b. using default method (Leontief)
 # with default post-multiplication (exports)
-l <- decomp(inter,
-            final,
-            countries,
-            industries,
-            out)
+l <- decomp(x = inter,
+            y = final,
+            k = countries,
+            i = industries,
+            o = out)
 
 # test output format (i.e. structure not numbers)
 test_that("output size matches", {
@@ -33,11 +34,11 @@ test_that("output matches", {
 context("leontief-output")
 
 # leontief decomposition
-lo <- decomp(inter,
-             final,
-             countries,
-             industries,
-             out,
+lo <- decomp(x = inter,
+             y = final,
+             k = countries,
+             i = industries,
+             o = out,
              method = "leontief",
              post = "output")
 
@@ -60,13 +61,13 @@ test_that("output matches", {
 context("leontief-finalDemand")
 
 # leontief decomposition
-lfd <- decomp(inter,
-             final,
-             countries,
-             industries,
-             out,
-             method = "leontief",
-             post = "final_demand")
+lfd <- decomp(x = inter,
+              y = final,
+              k = countries,
+              i = industries,
+              o = out,
+              method = "leontief",
+              post = "final_demand")
 
 test_that("output size matches", {
   expect_equal( length(lfd), 4)
