@@ -1,5 +1,5 @@
 Package: decompr
-Version: 6.0.0
+Version: 6.2.0
 Title: Global Value Chain Decomposition
 Description: Three global value chain (GVC) decompositions are implemented. 
     The Leontief decomposition derives the value added origin of exports by 
@@ -20,9 +20,9 @@ Description: Three global value chain (GVC) decompositions are implemented.
        National Bureau of Economic Research.
 Authors@R: c(
          person("Bastiaan", "Quast", role = c("aut", "cre"),
-                email = "bquast@gmail.com"), 
+                email = "bquast@gmail.com", comment=c(ORCID="0000-0002-2951-3577") ), 
          person("Fei", "Wang", role = "aut"), 
-         person("Victor", "Kummritz", role = "aut"), 
+         person("Victor", "Stolzenburg", role = "aut"), 
          person("Oliver", "Reiter", role = "ctb"),
          person("Sebastian", "Krantz", role = "ctb")
          )
@@ -34,14 +34,14 @@ URL: https://qua.st/decompr/, https://github.com/bquast/decompr
 BugReports: https://github.com/bquast/decompr/issues
 Suggests: gvc, testthat, knitr, rmarkdown
 VignetteBuilder: knitr
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
 Encoding: UTF-8
 NeedsCompilation: yes
-Packaged: 2021-05-08 21:35:18 UTC; bquast
-Author: Bastiaan Quast [aut, cre],
+Packaged: 2022-01-10 16:58:52 UTC; bquast
+Author: Bastiaan Quast [aut, cre] (<https://orcid.org/0000-0002-2951-3577>),
   Fei Wang [aut],
-  Victor Kummritz [aut],
+  Victor Stolzenburg [aut],
   Oliver Reiter [ctb],
   Sebastian Krantz [ctb]
 Repository: CRAN
-Date/Publication: 2021-05-10 00:12:10 UTC
+Date/Publication: 2022-01-10 17:22:43 UTC
