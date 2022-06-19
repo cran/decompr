@@ -1,5 +1,6 @@
-8309f7c90b553c23a2ac6d69c19f9853 *DESCRIPTION
+d39a061d106d6771514e5f5951a135c2 *DESCRIPTION
 b2d1bb559fd3371b9ddf775116a12267 *NAMESPACE
+6ac5ed66069d69ee4e9bd6a6564b4d8a *NEWS.md
 d0ca99cca72061120190c308297b85ba *R/decomp.R
 f53703d410dd1c016fde0e9c7f48d707 *R/decompr.R
 d4730c1367e6813a9752f1fa5d2c2b85 *R/kww.R
@@ -8,12 +9,12 @@ ed70e8b70610572514051dd583f97291 *R/load_tables.R
 45f1bcfa03520966f56a50b88393541d *R/load_tables_vectors.R
 3979ef7916e55081496fe392e1c9208a *R/wwz.R
 9b61b869362e2364e96e4d27c6029d43 *README.md
-c559f8f4fb46a3f6def0e817aed4b2b5 *build/vignette.rds
+b9e1e5977141c09dadfba28de066a5ca *build/vignette.rds
 06b57e2fba458630df77ced5631468f2 *data/leather.rda
 62753735546b74b693e78fc6788cb2ed *inst/CITATION
 069c0b6210847dcd4ac5681fac13c285 *inst/doc/decompr.R
 931b2b14498d136830e90b0457f2b07b *inst/doc/decompr.Rmd
-2d4a9dd701944769effda235d44d33e1 *inst/doc/decompr.html
+45c816808aef9e1015ff7783140f9223 *inst/doc/decompr.html
 c1a6f5c430dba37a62b700abc2b9a596 *inst/rstudio/addins.dcf
 cfb3083d6306ea1c015eb313576ff83c *man/decomp.Rd
 82882d17a37e9ed0d173408193c96795 *man/decompr-package.Rd
